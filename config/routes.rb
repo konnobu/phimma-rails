@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
   resources :exhibits
-  root 'exhibits#index'
+  root 'welcome#index'
 
   mount RailsAdmin::Engine => '/admin', as: :rails_admin
   devise_for :users
