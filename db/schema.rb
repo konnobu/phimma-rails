@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160702140935) do
+ActiveRecord::Schema.define(version: 20160702162242) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",               default: "", null: false
@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 20160702140935) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
 
+  create_table "exhibit_categories", force: :cascade do |t|
+    t.string   "category_name"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "exhibits", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "exhibit_category_id"
@@ -41,6 +47,7 @@ ActiveRecord::Schema.define(version: 20160702140935) do
     t.datetime "updated_at",          null: false
   end
 
+  add_index "exhibits", ["exhibit_category_id"], name: "index_exhibits_on_exhibit_category_id"
   add_index "exhibits", ["user_id"], name: "index_exhibits_on_user_id"
 
   create_table "users", force: :cascade do |t|

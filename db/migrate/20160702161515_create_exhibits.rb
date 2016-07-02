@@ -10,6 +10,7 @@ class CreateExhibits < ActiveRecord::Migration
       t.integer :book_status
       t.integer :exhibit_status
       t.references :user, index: true, foreign_key: true
+      t.references :exhibit_category, index: true, foreign_key: true
 
       t.timestamps null: false
     end
