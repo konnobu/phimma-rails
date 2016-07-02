@@ -1,2 +1,103 @@
-<h1>Exhibits#new</h1>
-<p>Find me in app/views/exhibits/new.html.erb</p>
+<?php
+
+?>
+
+<div id = "main" class="container">
+ <div class="well">
+   <div class="row">
+    <?php echo $this->Form->create('Exhibit'); ?>
+    <div class="col-md-4">
+     <div class="panel panel-primary">
+       <div class="panel-heading">
+         <h3 class="panel-title">
+           商品の画像を登録
+         </h3>
+       </div>
+       <div class="panel-body">
+         <div class="form-group">
+           <label>
+             商品の画像:
+           </label>
+           <?php echo $this->Form->file('image', array(
+           'id' => 'fileInput',
+           'class' => 'input-file uniform_on form-control'
+           )); ?>
+         </div>
+         <div class="well">
+          <label class="control-label" for="fileInput">
+          <?php echo $this->Html->image('/img/noimage.jpg', array(
+            'class' => 'img-responsive img-thumbnail center-block',
+            'id' => 'img_product'
+            )); ?>
+          </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+     <div class="panel panel-primary">
+       <div class="panel-heading">
+         <h3 class="panel-title">
+           商品の情報を入力
+         </h3>
+       </div>
+       <div class="panel-body">
+         <div class="form-group">
+            <label>
+             商品名：
+            </label>
+           <?php echo $this->Form->input('title', array(
+            'class' => 'form-control',
+            'label'=>false,
+            )); ?>
+          </div>
+          <div class="form-group">
+            <label>
+             商品説明：
+            </label>
+           <?php echo $this->Form->input('exhibit_description', array(
+            'rows' => '3',
+            'label'=>false,
+            'class' => 'form-control'
+            )); ?>
+          </div>
+          <div class="form-group">
+            <label>
+             カテゴリー：
+           </label>
+           <? echo $this->Form->input('exhibit_category_id', array(
+            'type'=>'select',
+            'div'=>false,
+            'class' => 'form-control',
+            'name' => 'category',
+            'label'=>false,
+            'options'=>$category_arr,
+            'empty'=>'選択してください'
+            ));?>
+          </div>
+          <div class="form-group">
+            <label>
+             商品状態：
+           </label>
+           <? echo $this->Form->input('book_status', array(
+            'type'=>'select',
+            'div'=>false,
+            'class' => 'form-control',
+            'name' => 'category',
+            'label'=>false,
+            'options'=>$book_status_arr,
+            'empty'=>'選択してください'
+            ));?>
+          </div>
+       </div>
+     </div><a href="trade_info.php" class="btn btn-default primary-pink btn-lg btn-block" style = "margin-bottom:15px" >
+
+     <span class="glyphicon glyphicon-upload"></span>
+     出品する
+   </a>
+ </div>
+
+</div>
+
+</div>
+</div>

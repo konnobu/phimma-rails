@@ -13,12 +13,21 @@
                   </div>
                 </div>
               </div>
-              <div class="header-right-login header-right-box">
-                <button class="btn btn-default login-btn primary-pink" type="submit">ログイン</button>
-              </div>
-              <div class="header-right-signup header-right-box">
-                <button class="btn btn-default signup-btn sub-blue" type="submit">新規会員登録</button>
-              </div>
+              <% if user_signed_in? %>
+                <div class="header-right-login header-right-box">
+                  <%= link_to '設定変更', edit_user_registration_path, class: "btn btn-default login-btn primary-pink" %>
+                </div>
+                <div class="header-right-login header-right-box">
+                  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-default signup-btn sub-blue" %>
+                </div>
+              <% else %>
+                <div class="header-right-login header-right-box">
+                  <%= link_to 'ログイン', new_user_session_path, class: "btn btn-default login-btn primary-pink" %>
+                </div>
+                <div class="header-right-signup header-right-box">
+                  <%= link_to '新規会員登録', new_user_registration_path, class: "btn btn-default signup-btn sub-blue" %>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
