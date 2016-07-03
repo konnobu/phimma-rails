@@ -1,2 +1,205 @@
-<h1>Exhibits#index</h1>
-<p>Find me in app/views/exhibits/index.html.erb</p>
+<div class="container">
+  <div class="well">
+    <ul class="breadcrumb">
+      <li><a href="#">TOP<br></a></li>
+      <li><a href="#">線形代数</a></li>
+    </ul>
+
+    <div class="row">
+      <!-- 左側 -->
+      <div class="col-md-3">
+        <div class="panel panel-primary">
+          <div class="btn-group" style="padding: 10px;">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              商品のソート種別
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#">価格順</a></li>
+              <li><a href="#">評価順</a></li>
+              <li><a href="#">名前順</a></li>
+              <li><a href="#">出品日順</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+
+          <div class="panel-body">
+
+            <div>
+              <div>カテゴリーを選択する</div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  奇書<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">数学</a></li>
+                  <li><a href="#">情報/IT</a></li>
+                  <li><a href="#">看護/医学</a></li>
+                  <li><a href="#">アプローチ科目</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <div>価格帯を選択する</div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  ￥0-￥500<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">￥3,001~</a></li>
+                  <li><a href="#">￥1,501~￥3,000</a></li>
+                  <li><a href="#">￥501~￥1,500</a></li>
+                  <li><a href="#">￥0~￥500</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <div class="row">
+                <div class="col-xs-4">
+                  <input type="text" class="form-control" placeholder="最低">
+                </div>
+
+                <div class="col-xs-4">
+                  <input type="text" class="form-control" placeholder="最高">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div>商品の状態</div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  傷や汚れあり<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">新品/未開封</a></li>
+                  <li><a href="#">美品</a></li>
+                  <li><a href="#">使用感あり</a></li>
+                  <li><a href="#">傷や汚れあり</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <div>出品者の評価</div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  レーティングを選択<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">★★★★★</a></li>
+                  <li><a href="#">★★★★☆</a></li>
+                  <li><a href="#">★★★☆☆</a></li>
+                  <li><a href="#">★★☆☆☆</a></li>
+                  <li><a href="#">★☆☆☆☆</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 右側 -->
+      <div class="col-md-9">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h4>検索結果 15件</h4>
+          </div>
+          <div class="panel-body">
+            <!-- ここに一覧が出てくる -->
+
+
+            <div class="row">
+
+              <a href="./product_info.html" style="color:#0000ff;text-decoration:none">
+                <div class="book col-md-4" style="float:left; padding:10px;">
+                  <div style="height:256px; overflow: auto;"><img src="data/sennkei.jpg" class="img-responsive center"></div>
+                  <div><font color="#000000">
+                    線形代数の教科書 その１</br>
+                    <b>1,200円</b>
+                  </font></div>
+                </div>
+              </a>
+
+              <a href="#" style="color:#0000ff;text-decoration:none">
+                <div class="book col-md-4" style="float:left; padding:10px;">
+                  <div style="height:256px; overflow: auto;"><img src="data/book_imgs/yamazaki.jpg" class="img-responsive center"></div>
+                  <div><font color="#000000">
+                    ヤマザキ、天皇を撃て!</br>
+                    <b>700円</b>
+                  </font></div>
+                </div>
+              </a>
+
+              <a href="#" style="color:#0000ff;text-decoration:none">
+                <div class="book col-md-4" style="float:left; padding:10px;">
+                  <div style="height:256px; overflow: auto;"><img src="data/book_imgs/seisho.jpg" class="img-responsive center"></div>
+                  <div><font color="#000000">
+                    宇宙人の聖書!?</br>
+                    <b>700円</b>
+                  </font></div>
+                </div>
+              </a>
+
+              <a href="#" style="color:#0000ff;text-decoration:none">
+                <div class="book col-md-4" style="float:left; padding:10px;">
+                  <div style="height:256px; overflow: auto;"><img src="data/book_imgs/meinkampf.jpg" class="img-responsive center"></div>
+                  <div><font color="#000000">
+                    Mein Kampf</br>
+                    <b>700円</b>
+                  </font></div>
+                </div>
+              </a>
+
+              <a href="#" style="color:#0000ff;text-decoration:none">
+                <div class="book col-md-4" style="float:left; padding:10px;">
+                  <div style="height:256px; overflow: auto;"><img src="data/book_imgs/dogu.jpg" class="img-responsive center"></div>
+                  <div><font color="#000000">
+                    ドグラ・マグラ</br>
+                    <b>700円</b>
+                  </font></div>
+                </div>
+              </a>
+
+              <a href="#" style="color:#0000ff;text-decoration:none">
+                <div class="book col-md-4" style="float:left; padding:10px;">
+                  <div style="height:256px; overflow: auto;"><img src="data/book_imgs/mishima.jpg" class="img-responsive center"></div>
+                  <div><font color="#000000">
+                    11・25自決の日三島由紀夫と若者たち</br>
+                    <b>700円</b>
+                  </font></div>
+                </div>
+              </a>
+
+              <a href="#" style="color:#0000ff;text-decoration:none">
+                <div class="book col-md-4" style="float:left; padding:10px;">
+                  <div style="height:256px; overflow: auto;"><img src="data/book_imgs/sealds.jpg" class="img-responsive center"></div>
+                  <div><font color="#000000">
+                    民主主義ってなんだ?</br>
+                    <b>700円</b>
+                  </font></div>
+                </div>
+              </a>
+
+              <a href="#" style="color:#0000ff;text-decoration:none">
+                <div class="book col-md-4" style="float:left; padding:10px;">
+                  <div style="height:256px; overflow: auto;"><img src="data/book_imgs/meinkampf.jpg" class="img-responsive center"></div>
+                  <div><font color="#000000">
+                    Mein Kampf</br>
+                    <b>700円</b>
+                  </font></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
