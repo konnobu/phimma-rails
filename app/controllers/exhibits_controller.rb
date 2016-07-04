@@ -3,7 +3,7 @@ class ExhibitsController < ApplicationController
   before_action :set_exhibit, only: [:show, :edit, :update, :destroy]
 
   def index
-
+    @exhibits = Exhibit.all.order(created_at: :desc)
   end
 
   def new
@@ -38,7 +38,7 @@ class ExhibitsController < ApplicationController
   private
 
   def exhibit_params
-    params.require(:exhibit).permit(:image, :title, :exhibit_description, :exhibit_category_id,:price, :book_status, :exhibit_status)
+    params.require(:exhibit).permit(:user_id, :image, :image_cache, :title, :exhibit_description, :exhibit_category_id,:price, :book_status_id, :exhibit_status_id)
   end
 
   def set_exhibit

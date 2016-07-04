@@ -115,86 +115,23 @@
 
 
             <div class="row">
-
-              <a href="./product_info.html" style="color:#0000ff;text-decoration:none">
-                <div class="book col-md-4" style="float:left; padding:10px;">
-                  <div style="height:256px; overflow: auto;"><img src="data/sennkei.jpg" class="img-responsive center"></div>
-                  <div><font color="#000000">
-                    線形代数の教科書 その１</br>
-                    <b>1,200円</b>
-                  </font></div>
+            <% @exhibits.each do |exhibit| %>
+              <%= link_to(exhibit_path(exhibit), style: "color:#0000ff;text-decoration:none") do %>
+                <div class="exhibit-card col-md-4">
+                  <div class="exhibit-card-img">
+                    <% if exhibit.image? %>
+                      <%# image_tag exhibit.image.url, class: "img-responsive center" %>
+                      <img src="http://www.ntochi.jp/wp-content/themes/ntochi/images/noimage.gif" alt="" height="256">
+                    <% else %>
+                      <img src="http://www.ntochi.jp/wp-content/themes/ntochi/images/noimage.gif" alt="" height="256">
+                    <% end %>
+                  </div>
+                  <font color="#000000">
+                    <%= exhibit.title %></br><b>¥ <%= exhibit.price %></b>
+                  </font>
                 </div>
-              </a>
-
-              <a href="#" style="color:#0000ff;text-decoration:none">
-                <div class="book col-md-4" style="float:left; padding:10px;">
-                  <div style="height:256px; overflow: auto;"><img src="data/book_imgs/yamazaki.jpg" class="img-responsive center"></div>
-                  <div><font color="#000000">
-                    ヤマザキ、天皇を撃て!</br>
-                    <b>700円</b>
-                  </font></div>
-                </div>
-              </a>
-
-              <a href="#" style="color:#0000ff;text-decoration:none">
-                <div class="book col-md-4" style="float:left; padding:10px;">
-                  <div style="height:256px; overflow: auto;"><img src="data/book_imgs/seisho.jpg" class="img-responsive center"></div>
-                  <div><font color="#000000">
-                    宇宙人の聖書!?</br>
-                    <b>700円</b>
-                  </font></div>
-                </div>
-              </a>
-
-              <a href="#" style="color:#0000ff;text-decoration:none">
-                <div class="book col-md-4" style="float:left; padding:10px;">
-                  <div style="height:256px; overflow: auto;"><img src="data/book_imgs/meinkampf.jpg" class="img-responsive center"></div>
-                  <div><font color="#000000">
-                    Mein Kampf</br>
-                    <b>700円</b>
-                  </font></div>
-                </div>
-              </a>
-
-              <a href="#" style="color:#0000ff;text-decoration:none">
-                <div class="book col-md-4" style="float:left; padding:10px;">
-                  <div style="height:256px; overflow: auto;"><img src="data/book_imgs/dogu.jpg" class="img-responsive center"></div>
-                  <div><font color="#000000">
-                    ドグラ・マグラ</br>
-                    <b>700円</b>
-                  </font></div>
-                </div>
-              </a>
-
-              <a href="#" style="color:#0000ff;text-decoration:none">
-                <div class="book col-md-4" style="float:left; padding:10px;">
-                  <div style="height:256px; overflow: auto;"><img src="data/book_imgs/mishima.jpg" class="img-responsive center"></div>
-                  <div><font color="#000000">
-                    11・25自決の日三島由紀夫と若者たち</br>
-                    <b>700円</b>
-                  </font></div>
-                </div>
-              </a>
-
-              <a href="#" style="color:#0000ff;text-decoration:none">
-                <div class="book col-md-4" style="float:left; padding:10px;">
-                  <div style="height:256px; overflow: auto;"><img src="data/book_imgs/sealds.jpg" class="img-responsive center"></div>
-                  <div><font color="#000000">
-                    民主主義ってなんだ?</br>
-                    <b>700円</b>
-                  </font></div>
-                </div>
-              </a>
-
-              <a href="#" style="color:#0000ff;text-decoration:none">
-                <div class="book col-md-4" style="float:left; padding:10px;">
-                  <div style="height:256px; overflow: auto;"><img src="data/book_imgs/meinkampf.jpg" class="img-responsive center"></div>
-                  <div><font color="#000000">
-                    Mein Kampf</br>
-                    <b>700円</b>
-                  </font></div>
-                </div>
-              </a>
+                <% end %>
+              <% end %>
             </div>
           </div>
         </div>

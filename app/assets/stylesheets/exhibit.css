@@ -1,0 +1,8 @@
+.exhibit-card {
+  float:left;
+  padding:10px;
+}
+
+.exhibit-card-img {
+  overflow: hidden;
+}
