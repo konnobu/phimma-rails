@@ -46,6 +46,10 @@
              <%= f.label "商品状態" %>
              <%= f.collection_select :book_status_id, BookStatus.all, :id, :status_title , { include_blank: "本の状態を選択してください" },  { class: "form-control" } %>
            </div>
+           <div class="form-group">
+             <%= f.label "出品価格" %>
+             <%= f.number_field :price, class: "form-control" %>
+           </div>
          </div>
        </div><a href="trade_info.php" class="btn btn-default primary-pink btn-lg btn-block" style = "margin-bottom:15px" >
        <span class="glyphicon glyphicon-upload"></span>
