@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160702162242) do
+ActiveRecord::Schema.define(version: 20160704014053) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",               default: "", null: false
@@ -28,10 +28,24 @@ ActiveRecord::Schema.define(version: 20160702162242) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
 
+  create_table "book_statuses", force: :cascade do |t|
+    t.string   "status_title"
+    t.string   "status_description"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
   create_table "exhibit_categories", force: :cascade do |t|
     t.string   "category_name"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "exhibit_statuses", force: :cascade do |t|
+    t.string   "status_title"
+    t.string   "status_description"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "exhibits", force: :cascade do |t|
@@ -41,13 +55,15 @@ ActiveRecord::Schema.define(version: 20160702162242) do
     t.string   "title"
     t.text     "exhibit_description"
     t.integer  "price"
-    t.integer  "book_status"
-    t.integer  "exhibit_status"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.integer  "book_status_id"
+    t.integer  "exhibit_status_id"
   end
 
+  add_index "exhibits", ["book_status_id"], name: "index_exhibits_on_book_status_id"
   add_index "exhibits", ["exhibit_category_id"], name: "index_exhibits_on_exhibit_category_id"
+  add_index "exhibits", ["exhibit_status_id"], name: "index_exhibits_on_exhibit_status_id"
   add_index "exhibits", ["user_id"], name: "index_exhibits_on_user_id"
 
   create_table "users", force: :cascade do |t|
@@ -64,6 +80,11 @@ ActiveRecord::Schema.define(version: 20160702162242) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "admin"
+    t.string   "name"
+    t.string   "student_number"
+    t.integer  "faculty_id"
+    t.integer  "department_id"
+    t.date     "admission_year"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

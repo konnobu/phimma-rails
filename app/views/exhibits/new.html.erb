@@ -1,103 +1,58 @@
-<?php
-
-?>
-
 <div id = "main" class="container">
- <div class="well">
-   <div class="row">
-    <?php echo $this->Form->create('Exhibit'); ?>
-    <div class="col-md-4">
-     <div class="panel panel-primary">
-       <div class="panel-heading">
-         <h3 class="panel-title">
-           商品の画像を登録
-         </h3>
-       </div>
-       <div class="panel-body">
-         <div class="form-group">
-           <label>
-             商品の画像:
-           </label>
-           <?php echo $this->Form->file('image', array(
-           'id' => 'fileInput',
-           'class' => 'input-file uniform_on form-control'
-           )); ?>
+  <div class="well">
+    <div class="row">
+      <%= form_for @exhibit do |f| %>
+      <div class="col-md-4">
+       <div class="panel panel-primary">
+         <div class="panel-heading">
+           <h3 class="panel-title">
+             商品の画像を登録
+           </h3>
          </div>
-         <div class="well">
-          <label class="control-label" for="fileInput">
-          <?php echo $this->Html->image('/img/noimage.jpg', array(
-            'class' => 'img-responsive img-thumbnail center-block',
-            'id' => 'img_product'
-            )); ?>
-          </label>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-8">
-     <div class="panel panel-primary">
-       <div class="panel-heading">
-         <h3 class="panel-title">
-           商品の情報を入力
-         </h3>
+         <div class="panel-body">
+           <div class="form-group">
+             <label>
+               商品の画像:
+             </label>
+             <input type="file" class="form-control">
+           </div>
+           <div class="well">
+             <img src="images/noimage.jpg" class="img-responsive img-thumbnail center-block" id="img_product">
+           </div>
+         </div>
        </div>
-       <div class="panel-body">
-         <div class="form-group">
-            <label>
-             商品名：
-            </label>
-           <?php echo $this->Form->input('title', array(
-            'class' => 'form-control',
-            'label'=>false,
-            )); ?>
-          </div>
-          <div class="form-group">
-            <label>
-             商品説明：
-            </label>
-           <?php echo $this->Form->input('exhibit_description', array(
-            'rows' => '3',
-            'label'=>false,
-            'class' => 'form-control'
-            )); ?>
-          </div>
-          <div class="form-group">
-            <label>
-             カテゴリー：
-           </label>
-           <? echo $this->Form->input('exhibit_category_id', array(
-            'type'=>'select',
-            'div'=>false,
-            'class' => 'form-control',
-            'name' => 'category',
-            'label'=>false,
-            'options'=>$category_arr,
-            'empty'=>'選択してください'
-            ));?>
-          </div>
-          <div class="form-group">
-            <label>
-             商品状態：
-           </label>
-           <? echo $this->Form->input('book_status', array(
-            'type'=>'select',
-            'div'=>false,
-            'class' => 'form-control',
-            'name' => 'category',
-            'label'=>false,
-            'options'=>$book_status_arr,
-            'empty'=>'選択してください'
-            ));?>
-          </div>
-       </div>
-     </div><a href="trade_info.php" class="btn btn-default primary-pink btn-lg btn-block" style = "margin-bottom:15px" >
-
-     <span class="glyphicon glyphicon-upload"></span>
-     出品する
-   </a>
+     </div>
+     <div class="col-md-8">
+       <div class="panel panel-primary">
+         <div class="panel-heading">
+           <h3 class="panel-title">
+             商品の情報を入力
+           </h3>
+         </div>
+         <div class="panel-body">
+           <div class="form-group">
+             <%= f.label "商品名" %>
+             <%= f.text_field :title, class: "form-control" %>
+           </div>
+           <div class="form-group">
+             <%= f.label "商品説明" %>
+             <%= f.text_area :exhibit_description, class: "form-control" %>
+           </div>
+           <div class="form-group">
+             <%= f.label "出品カテゴリー" %>
+             <%= f.collection_select :exhibit_category_id, ExhibitCategory.all, :id, :category_name , { include_blank: "カテゴリを選択してください" },  { class: "form-control" } %>
+           </div>
+           <div class="form-group">
+             <%= f.label "商品状態" %>
+             <%= f.collection_select :book_status_id, BookStatus.all, :id, :status_title , { include_blank: "本の状態を選択してください" },  { class: "form-control" } %>
+           </div>
+         </div>
+       </div><a href="trade_info.php" class="btn btn-default primary-pink btn-lg btn-block" style = "margin-bottom:15px" >
+       <span class="glyphicon glyphicon-upload"></span>
+       出品する
+     </a>
+   </div>
+   <% end %>
  </div>
-
-</div>
-
 </div>
 </div>
