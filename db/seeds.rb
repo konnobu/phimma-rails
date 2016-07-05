@@ -25,3 +25,4 @@ Department.first_or_create([
   { faculty_id: 5, department_name: '生活科学学科' },
   { faculty_id: 6, department_name: '経営情報' }
 ])
+
