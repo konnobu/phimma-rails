@@ -12,7 +12,7 @@ class ExhibitsController < ApplicationController
   # 商品新規登録newアクション
   def new
     @exhibit = Exhibit.new
-    render :layout => "non_header"
+    render layout: 'non_header'
   end
 
   # 商品新規登録createアクション
@@ -21,13 +21,13 @@ class ExhibitsController < ApplicationController
     if @exhibit.save
       redirect_to exhibits_url
     else
-      redirect_to new_exhibit_url
+      render 'new', layout: 'non_header'
     end
   end
 
   # 商品編集editアクション
   def edit
-    render :layout => "non_header"
+    redirect_to :layout => "non_header"
   end
 
   # 商品編集updateアクション

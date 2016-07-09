@@ -5,6 +5,17 @@
         <%= image_tag 'unima-logo', :class => 'exhibit-new-top-logo' %>
       </section>
 
+      <% if @exhibit.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <h2><%= pluralize(@exhibit.errors.count, "error") %> 件のエラーがあります。</h2>
+        <ul>
+          <% @exhibit.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+
       <section class="exhibit-single-container">
         <div class="exhibit-single-container-title">
           <h1>出品情報を入力</h1>
