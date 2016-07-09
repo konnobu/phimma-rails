@@ -1,7 +1,18 @@
-<div id = "main" class="container">
-  <div class="well">
-    <div class="row">
-      <%= render partial: 'form' %>
+<div class="container exhibit-new-container">
+  <div class="row">
+    <div class="col-sm-12">
+      <section class="exhibit-new-top">
+        <%= image_tag 'unima-logo', :class => 'exhibit-new-top-logo' %>
+      </section>
+
+      <section class="exhibit-single-container">
+        <div class="exhibit-single-container-title">
+          <h1>出品情報を入力</h1>
+        </div>
+        <div class="exhibit-single-container-main">
+          <%= render partial: 'form' %>
+        </div>
+      </section>
     </div>
   </div>
 </div>

@@ -1,54 +1,71 @@
 <%= form_for @exhibit do |f| %>
-<div class="col-md-4">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">
-        商品の画像を登録
-      </h3>
+
+<div class="exhibit-single-container-main-child">
+  <div class="form-group">
+    <%=f.label :image,"出品画像", class: 'exhibit-label' %> <span class="label label-danger exhibit-danger-label">必須</span>
+    <%= f.file_field :image %>
+    <%# f.hidden_field :image_cache %>
+  </div>
+</div>
+
+<div class="exhibit-single-container-main-child">
+  <div class="form-group">
+    <%= f.label "商品名" %>  <span class="label label-danger exhibit-danger-label">必須</span>
+    <%= f.text_field :title, class: "form-control input-lg", :placeholder => "商品名（必須, 30文字まで）" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "商品説明" %>  <span class="label label-danger exhibit-danger-label">必須</span>
+    <%= f.text_area :exhibit_description, class: "form-control input-lg", :placeholder => "商品説明（必須, 1000文字まで）（商品を使用した授業名, 商品の状態, 定価, 注意点など…）"  %>
+  </div>
+</div>
+
+<div class="exhibit-single-container-main-child">
+  <div class="row exhibit-single-container-main-child-col">
+    <div class="col-sm-3 exhibit-single-container-main-child-col">
+      <h2>商品詳細</h2>
     </div>
-    <div class="panel-body">
+    <div class="col-sm-9 exhibit-single-container-main-child-col main-child-col-right">
       <div class="form-group">
-        <%=f.label :image,"商品画像" %>
-        <%= f.file_field :image %>
-        <%# f.hidden_field :image_cache %>
+        <%= f.label "出品カテゴリー" %>  <span class="label label-danger exhibit-danger-label">必須</span>
+        <%= f.collection_select :exhibit_category_id, ExhibitCategory.all, :id, :category_name , { include_blank: " -- " },  { class: "form-control input-lg" } %>
+      </div>
+      <div class="form-group">
+        <%= f.label "商品状態" %>  <span class="label label-danger exhibit-danger-label">必須</span>
+        <%= f.collection_select :book_status_id, BookStatus.all, :id, :status_title , { include_blank: " -- " },  { class: "form-control input-lg" } %>
       </div>
     </div>
   </div>
 </div>
-<div class="col-md-8">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">
-        商品の情報を入力
-      </h3>
+
+<div class="exhibit-single-container-main-child">
+  <div class="row exhibit-single-container-main-child-col">
+    <div class="col-sm-3 exhibit-single-container-main-child-col">
+      <h2>出品価格</h2>
     </div>
-    <div class="panel-body">
+    <div class="col-sm-9 exhibit-single-container-main-child-col">
       <div class="form-group">
-        <%= f.label "商品名" %>
-        <%= f.text_field :title, class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.label "商品説明" %>
-        <%= f.text_area :exhibit_description, class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.label "出品カテゴリー" %>
-        <%= f.collection_select :exhibit_category_id, ExhibitCategory.all, :id, :category_name , { include_blank: "カテゴリを選択してください" },  { class: "form-control" } %>
-      </div>
-      <div class="form-group">
-        <%= f.label "商品状態" %>
-        <%= f.collection_select :book_status_id, BookStatus.all, :id, :status_title , { include_blank: "本の状態を選択してください" },  { class: "form-control" } %>
-      </div>
-      <div class="form-group">
-        <%= f.label "出品価格" %>
-        <%= f.number_field :price, class: "form-control" %>
+        <div class="row">
+          <div class="col-sm-2 exhibit-single-container-main-child-col main-child-col-right">
+            <%= f.label "価格" %> <span class="label label-danger exhibit-danger-label">必須</span>
+          </div>
+          <div class="col-sm-1 exhibit-single-container-main-child-col main-child-col-right">
+            <span class="yen">¥</span>
+          </div>
+          <div class="col-sm-9 exhibit-single-container-main-child-col main-child-col-right">
+            <%= f.number_field :price, class: "form-control input-lg" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="exhibit-single-container-main-child exhibit-submit">
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :exhibit_status_id, value: 1 %>
-  <%= button_tag :type => "submit", :class =>"btn btn-default primary-pink btn-lg btn-block" do %>
-    <span class="glyphicon glyphicon-upload"></span> 出品する
+  <%= button_tag :type => "submit", :class =>"btn btn-default submit-btn center-block" do %>
+  出品する
   <% end %>
 </div>
+
 <% end %>

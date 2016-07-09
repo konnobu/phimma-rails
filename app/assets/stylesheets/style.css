@@ -25,6 +25,10 @@ body {
   border: none;
 }
 
+.input-lg {
+  font-size: 1em;
+}
+
 /* ヘッダー */
 .header {
   height: 80px
@@ -124,6 +128,7 @@ body {
   height: 80%;
   min-height: 500px;
 }
+
 /*
 
 .intro .container {
@@ -216,7 +221,7 @@ body {
 
 /* フッター */
 footer {
-  padding: 150px 0 0 0;
+  padding: 100px 0 0 0;
   bottom: 0;
   height: 5em;
   width: 100%;

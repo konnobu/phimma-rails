@@ -12,6 +12,7 @@ class ExhibitsController < ApplicationController
   # 商品新規登録newアクション
   def new
     @exhibit = Exhibit.new
+    render :layout => "non_header"
   end
 
   # 商品新規登録createアクション
@@ -26,6 +27,7 @@ class ExhibitsController < ApplicationController
 
   # 商品編集editアクション
   def edit
+    render :layout => "non_header"
   end
 
   # 商品編集updateアクション
