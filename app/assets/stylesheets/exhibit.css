@@ -1,24 +1,32 @@
 .exhibit-card {
+  overflow: hidden;
+  margin-bottom: 30px;
 }
 
-.exhibit-card-container {
+.exhibit-card-top {
   width: 256px;
-  padding: 16px;
   height: 256px;
   overflow: hidden;
   background-color: #888;
 }
 
-.exhibit-card-container img {
+.exhibit-card-top img {
   position: relative;
   top: 50%;
   left: 50%;
   width: auto;
-  height: auto;
+  height: 100%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
+
+.exhibit-card-bottom {
+  padding: 7px 15px;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
 
 .left-side-menu-sec {
   padding: 15px 0;

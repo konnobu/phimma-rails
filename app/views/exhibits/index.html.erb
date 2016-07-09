@@ -3,7 +3,7 @@
   <div class="row breadcrumb-row">
     <ul class="breadcrumb">
       <li><a href="#">TOP<br></a></li>
-      <li><a href="#">線形代数</a></li>
+      <li><a href="#">出品一覧</a></li>
     </ul>
   </div>
 
@@ -112,36 +112,28 @@
 
     <!-- 右側 -->
     <div class="col-md-9">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h4 class="search-result-count">検索結果 15件</h4>
-        </div>
-        <div class="panel-body">
-          <!-- ここに一覧が出てくる -->
-
-
-          <div class="row">
-            <% @exhibits.each do |exhibit| %>
-            <%= link_to(exhibit_path(exhibit), style: "color:#0000ff;text-decoration:none") do %>
-            <div class="exhibit-card col-md-4">
-              <div class="exhibit-card-container">
-                <% if exhibit.image? %>
-                <%# image_tag exhibit.image.url, class: "img-responsive center" %>
-                <img src="http://www.ntochi.jp/wp-content/themes/ntochi/images/noimage.gif" >
-                <% else %>
-                <img src="http://www.ntochi.jp/wp-content/themes/ntochi/images/noimage.gif" >
-                <% end %>
-              </div>
-              <font color="#000000">
-                <%= exhibit.title %></br><b>¥ <%= exhibit.price %></b>
-              </font>
-            </div>
-            <% end %>
+      <div class="row">
+        <% @exhibits.each do |exhibit| %>
+        <%= link_to(exhibit_path(exhibit), style: "color:#0000ff;text-decoration:none") do %>
+        <div class="exhibit-card col-md-4">
+          <div class="exhibit-card-top">
+            <% if exhibit.image? %>
+            <%# image_tag exhibit.image.url, class: "img-responsive center" %>
+            <img src="https://static-mercari-jp-imgtr.akamaized.net/photos/m656352588_1.jpg?1468037447" >
+            <% else %>
+            <img src="https://static-mercari-jp-imgtr.akamaized.net/photos/m656352588_1.jpg?1468037447" >
             <% end %>
           </div>
+          <div class="exhibit-card-bottom">
+            <%= exhibit.title %></br><b>¥ <%= exhibit.price %></b>
+          </div>
         </div>
+        <% end %>
+        <% end %>
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
 
