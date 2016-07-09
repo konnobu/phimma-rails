@@ -1,138 +1,143 @@
 <div class="container">
-  <div class="well">
+
+  <div class="row breadcrumb-row">
     <ul class="breadcrumb">
       <li><a href="#">TOP<br></a></li>
       <li><a href="#">線形代数</a></li>
     </ul>
+  </div>
 
-    <div class="row">
-      <!-- 左側 -->
-      <div class="col-md-3">
-        <div class="panel panel-primary">
-          <div class="btn-group" style="padding: 10px;">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              商品のソート種別
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a href="#">価格順</a></li>
-              <li><a href="#">評価順</a></li>
-              <li><a href="#">名前順</a></li>
-              <li><a href="#">出品日順</a></li>
-            </ul>
-          </div>
+  <div class="row">
+    <!-- 左側 -->
+    <div class="col-md-3">
+
+      <section class="left-side-menu search-result-count-sec">
+        <div class="row search-result-count">
+          対象出品数<br>
+          <span>15</span> 件
         </div>
+      </section>
 
-        <div class="panel panel-primary">
-
-          <div class="panel-body">
-
-            <div>
-              <div>カテゴリーを選択する</div>
-              <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  奇書<span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">数学</a></li>
-                  <li><a href="#">情報/IT</a></li>
-                  <li><a href="#">看護/医学</a></li>
-                  <li><a href="#">アプローチ科目</a></li>
-                </ul>
-              </div>
+      <div class="left-side-menu-sec">
+        <section class="left-side-menu sort-type-sec">
+          <div class="row">
+            <div>並び替え</div>
+            <div class="btn-group" style="">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                並び替えの種類
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">価格順</a></li>
+                <li><a href="#">評価順</a></li>
+                <li><a href="#">名前順</a></li>
+                <li><a href="#">出品日順</a></li>
+              </ul>
             </div>
-
-            <div>
-              <div>価格帯を選択する</div>
-              <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  ￥0-￥500<span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">￥3,001~</a></li>
-                  <li><a href="#">￥1,501~￥3,000</a></li>
-                  <li><a href="#">￥501~￥1,500</a></li>
-                  <li><a href="#">￥0~￥500</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <div>
-              <div class="row">
-                <div class="col-xs-4">
-                  <input type="text" class="form-control" placeholder="最低">
-                </div>
-
-                <div class="col-xs-4">
-                  <input type="text" class="form-control" placeholder="最高">
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div>商品の状態</div>
-              <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  傷や汚れあり<span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">新品/未開封</a></li>
-                  <li><a href="#">美品</a></li>
-                  <li><a href="#">使用感あり</a></li>
-                  <li><a href="#">傷や汚れあり</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <div>
-              <div>出品者の評価</div>
-              <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  レーティングを選択<span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">★★★★★</a></li>
-                  <li><a href="#">★★★★☆</a></li>
-                  <li><a href="#">★★★☆☆</a></li>
-                  <li><a href="#">★★☆☆☆</a></li>
-                  <li><a href="#">★☆☆☆☆</a></li>
-                </ul>
-              </div>
-            </div>
-
           </div>
-        </div>
+        </section>
+
+        <section class="left-side-menu category-type-sec">
+          <div class="row">
+            <div>カテゴリーを選択する</div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                選択
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">数学</a></li>
+                <li><a href="#">情報/IT</a></li>
+                <li><a href="#">看護/医学</a></li>
+                <li><a href="#">アプローチ科目</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="left-side-menu price-type-sec">
+          <div class="row">
+            <div>価格帯を選択する</div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ￥0-￥500<span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">￥3,001~</a></li>
+                <li><a href="#">￥1,501~￥3,000</a></li>
+                <li><a href="#">￥501~￥1,500</a></li>
+                <li><a href="#">￥0~￥500</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="left-side-menu exhibit-status-sec">
+          <div class="row">
+            <div>商品の状態</div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                傷や汚れあり<span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">新品/未開封</a></li>
+                <li><a href="#">美品</a></li>
+                <li><a href="#">使用感あり</a></li>
+                <li><a href="#">傷や汚れあり</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="left-side-menu category-type-sec">
+          <div class="row">
+            <div>出品者の評価</div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                レーティングを選択<span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">★★★★★</a></li>
+                <li><a href="#">★★★★☆</a></li>
+                <li><a href="#">★★★☆☆</a></li>
+                <li><a href="#">★★☆☆☆</a></li>
+                <li><a href="#">★☆☆☆☆</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
-
-      <!-- 右側 -->
-      <div class="col-md-9">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h4>検索結果 15件</h4>
-          </div>
-          <div class="panel-body">
-            <!-- ここに一覧が出てくる -->
+    </div>
 
 
-            <div class="row">
+    <!-- 右側 -->
+    <div class="col-md-9">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h4 class="search-result-count">検索結果 15件</h4>
+        </div>
+        <div class="panel-body">
+          <!-- ここに一覧が出てくる -->
+
+
+          <div class="row">
             <% @exhibits.each do |exhibit| %>
-              <%= link_to(exhibit_path(exhibit), style: "color:#0000ff;text-decoration:none") do %>
-                <div class="exhibit-card col-md-4">
-                  <div class="exhibit-card-img">
-                    <% if exhibit.image? %>
-                      <%# image_tag exhibit.image.url, class: "img-responsive center" %>
-                      <img src="http://www.ntochi.jp/wp-content/themes/ntochi/images/noimage.gif" alt="" height="256">
-                    <% else %>
-                      <img src="http://www.ntochi.jp/wp-content/themes/ntochi/images/noimage.gif" alt="" height="256">
-                    <% end %>
-                  </div>
-                  <font color="#000000">
-                    <%= exhibit.title %></br><b>¥ <%= exhibit.price %></b>
-                  </font>
-                </div>
+            <%= link_to(exhibit_path(exhibit), style: "color:#0000ff;text-decoration:none") do %>
+            <div class="exhibit-card col-md-4">
+              <div class="exhibit-card-container">
+                <% if exhibit.image? %>
+                <%# image_tag exhibit.image.url, class: "img-responsive center" %>
+                <img src="http://www.ntochi.jp/wp-content/themes/ntochi/images/noimage.gif" >
+                <% else %>
+                <img src="http://www.ntochi.jp/wp-content/themes/ntochi/images/noimage.gif" >
                 <% end %>
-              <% end %>
+              </div>
+              <font color="#000000">
+                <%= exhibit.title %></br><b>¥ <%= exhibit.price %></b>
+              </font>
             </div>
+            <% end %>
+            <% end %>
           </div>
         </div>
       </div>

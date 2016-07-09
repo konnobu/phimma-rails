@@ -92,6 +92,10 @@ p{
     min-height: 800px;
 }
 
+.alert {
+    margin-bottom: 0;
+}
+
 /*
 Navbar
 =========================== */
@@ -104,6 +108,10 @@ ul.cart-list > li.total > .btn{
     border-bottom: solid 1px #cfcfcf !important;
     color: #fff !important;
     padding: 10px 15px;
+}
+
+nav.navbar li.dropdown ul.dropdown-menu{
+    border-top-color: #337ab7 !important;
 }
 
 @media (min-width: 1024px) {

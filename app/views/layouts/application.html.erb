@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PHIMMA!（フィムマ）｜大学生教科書フリマ！</title>
+  <title>UNIMA!（ユニマ）｜大学生教科書フリマ！</title>
   <script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -19,9 +19,16 @@
 
   <%= render partial: 'layouts/header' %>
 
-  <% if notice.present? || alert.present? %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <% if notice.present? %>
+    <div class="alert alert-success" role="alert">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <% if alert.present? %>
+    <div class="alert alert-danger" role="alert">
+      <%= alert %>
+    </div>
   <% end %>
 
 
