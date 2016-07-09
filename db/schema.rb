@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160704014053) do
+ActiveRecord::Schema.define(version: 20160704071400) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",               default: "", null: false
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 20160704014053) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
+
+  create_table "departments", force: :cascade do |t|
+    t.string   "department_name"
+    t.integer  "faculty_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "departments", ["faculty_id"], name: "index_departments_on_faculty_id"
 
   create_table "exhibit_categories", force: :cascade do |t|
     t.string   "category_name"
@@ -66,6 +75,12 @@ ActiveRecord::Schema.define(version: 20160704014053) do
   add_index "exhibits", ["exhibit_status_id"], name: "index_exhibits_on_exhibit_status_id"
   add_index "exhibits", ["user_id"], name: "index_exhibits_on_user_id"
 
+  create_table "faculties", force: :cascade do |t|
+    t.string   "faculty_name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -82,12 +97,15 @@ ActiveRecord::Schema.define(version: 20160704014053) do
     t.string   "admin"
     t.string   "name"
     t.string   "student_number"
+    t.date     "admission_year"
+    t.string   "self_introduction"
     t.integer  "faculty_id"
     t.integer  "department_id"
-    t.date     "admission_year"
   end
 
+  add_index "users", ["department_id"], name: "index_users_on_department_id"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["faculty_id"], name: "index_users_on_faculty_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
