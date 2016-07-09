@@ -27,7 +27,7 @@ class ExhibitsController < ApplicationController
 
   # 商品編集editアクション
   def edit
-    redirect_to :layout => "non_header"
+    render layout: 'non_header'
   end
 
   # 商品編集updateアクション
