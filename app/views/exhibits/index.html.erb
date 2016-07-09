@@ -118,10 +118,9 @@
         <div class="exhibit-card col-md-4">
           <div class="exhibit-card-top">
             <% if exhibit.image? %>
-            <%# image_tag exhibit.image.url, class: "img-responsive center" %>
-            <img src="https://static-mercari-jp-imgtr.akamaized.net/photos/m656352588_1.jpg?1468037447" >
+              <%= image_tag exhibit.image.url %>
             <% else %>
-            <img src="https://static-mercari-jp-imgtr.akamaized.net/photos/m656352588_1.jpg?1468037447" >
+              <img src="http://design-ec.com/d/e_others_50/l_e_others_500.png" >
             <% end %>
           </div>
           <div class="exhibit-card-bottom">
