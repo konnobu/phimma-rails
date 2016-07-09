@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160704071400) do
+ActiveRecord::Schema.define(version: 20160705011858) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",               default: "", null: false
@@ -98,7 +98,6 @@ ActiveRecord::Schema.define(version: 20160704071400) do
     t.string   "name"
     t.string   "student_number"
     t.date     "admission_year"
-    t.string   "self_introduction"
     t.integer  "faculty_id"
     t.integer  "department_id"
   end

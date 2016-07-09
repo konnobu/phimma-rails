@@ -6,7 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
 Faculty.first_or_create([
   { faculty_name: '看護学部' },
   { faculty_name: '社会福祉学部' },
