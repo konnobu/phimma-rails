@@ -214,6 +214,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   rails (= 4.2.6)
   rails-assets-bootstrap-sass-official (= 3.3.5)!
   rails-assets-jquery (= 1.11.3)!
