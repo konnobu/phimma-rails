@@ -1,0 +1,29 @@
+<div class="container exhibit-new-container">
+  <div class="row">
+    <div class="col-sm-12">
+      <section class="exhibit-new-top">
+        <%= image_tag 'unima-logo', :class => 'exhibit-new-top-logo' %>
+      </section>
+
+      <% if @exhibit.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <h2><%= @exhibit.errors.count %> 件のエラーがあります。</h2>
+        <ul>
+          <% @exhibit.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+
+      <section class="exhibit-single-container">
+        <div class="exhibit-single-container-title">
+          <h1>出品情報を編集</h1>
+        </div>
+        <div class="exhibit-single-container-main">
+          <%= render partial: 'form' %>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

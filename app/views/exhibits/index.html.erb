@@ -1,0 +1,149 @@
+<div class="container">
+
+  <div class="row breadcrumb-row">
+    <ul class="breadcrumb">
+      <li><a href="#">TOP<br></a></li>
+      <li><a href="#">出品一覧</a></li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <!-- 左側 -->
+    <div class="col-md-3">
+
+      <section class="left-side-menu search-sec">
+        <%= search_form_for @q do |f| %>
+        <div class="form-group">
+          <%= f.search_field :title_or_exhibit_description_cont, placeholder: "タイトルか説明文を検索", class: "form-control search-btn" %>
+          <%= f.submit "検索", style: "display: none" %>
+        </div>
+        <% end %>
+      </section>
+
+      <section class="left-side-menu search-result-count-sec">
+        <div class="row search-result-count">
+          対象出品数<br>
+          <span><%= @exhibits.count %></span> 件
+        </div>
+      </section>
+
+      <div class="left-side-menu-sec">
+        <section class="left-side-menu sort-type-sec">
+          <div class="row">
+            <div>並び替え（未実装）</div>
+            <div class="btn-group" style="">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                並び替えの種類
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">価格順</a></li>
+                <li><a href="#">評価順</a></li>
+                <li><a href="#">名前順</a></li>
+                <li><a href="#">出品日順</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="left-side-menu category-type-sec">
+          <div class="row">
+            <div>カテゴリーを選択する（未実装）</div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                選択
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">数学</a></li>
+                <li><a href="#">情報/IT</a></li>
+                <li><a href="#">看護/医学</a></li>
+                <li><a href="#">アプローチ科目</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="left-side-menu price-type-sec">
+          <div class="row">
+            <div>価格帯を選択する（未実装）</div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ￥0-￥500<span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">￥3,001~</a></li>
+                <li><a href="#">￥1,501~￥3,000</a></li>
+                <li><a href="#">￥501~￥1,500</a></li>
+                <li><a href="#">￥0~￥500</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="left-side-menu exhibit-status-sec">
+          <div class="row">
+            <div>商品の状態（未実装）</div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                傷や汚れあり<span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">新品/未開封</a></li>
+                <li><a href="#">美品</a></li>
+                <li><a href="#">使用感あり</a></li>
+                <li><a href="#">傷や汚れあり</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="left-side-menu category-type-sec">
+          <div class="row">
+            <div>出品者の評価（未実装）</div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                レーティングを選択<span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">★★★★★</a></li>
+                <li><a href="#">★★★★☆</a></li>
+                <li><a href="#">★★★☆☆</a></li>
+                <li><a href="#">★★☆☆☆</a></li>
+                <li><a href="#">★☆☆☆☆</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+    <!-- 右側 -->
+    <div class="col-md-9">
+      <div class="row">
+        <% @exhibits.each do |exhibit| %>
+        <%= link_to(exhibit_path(exhibit), style: "color:#0000ff;text-decoration:none") do %>
+        <div class="exhibit-card col-md-4">
+          <div class="exhibit-card-top">
+            <% if exhibit.image? %>
+            <%= image_tag exhibit.image.url %>
+            <% else %>
+            <img src="http://design-ec.com/d/e_others_50/l_e_others_500.png" >
+            <% end %>
+          </div>
+          <div class="exhibit-card-bottom">
+            <%= exhibit.title %></br><b>¥ <%= exhibit.price %></b>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+        <%= paginate @exhibits %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+

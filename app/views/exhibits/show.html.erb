@@ -1,0 +1,119 @@
+<div class="container">
+  <div class="row breadcrumb-row">
+    <ul class="breadcrumb">
+      <li><a href="#">TOP<br></a></li>
+      <li><a href="#">出品詳細</a></li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <!-- 左側 -->
+    <div class="col-md-4">
+
+      <div class="left-side-menu-sec">
+        <section class="left-side-menu exhibit-detail-sec">
+          <div class="row">
+            <div class="exhibit-h2">
+              出品詳細情報
+            </div>
+            <div class="exhibit-detail">
+              <div class="table-responsive">
+                <table class="table">
+                  <tr>
+                    <td>商品価格：</td>
+                    <td><%= @exhibit.price %>円</td>
+                  </tr>
+                  <tr>
+                    <td>商品状態：</td>
+                    <td><%= @exhibit.book_status.status_title %></td>
+                  </tr>
+                  <tr>
+                    <td>カテゴリ：</td>
+                    <td><%= @exhibit.exhibit_category.category_name %></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="left-side-menu-sec left-side-menu-exhibit-user-sec">
+        <section class="left-side-menu exhibit-user-sec">
+          <div class="row">
+            <div class="exhibit-h2">
+              出品者情報
+            </div>
+          </div>
+        </section>
+        <div class="exhibit-user-thumbnail-sec">
+          <figure class="exhibit-user-thumbnail-sec-img">
+
+            <div class="image"><%= image_tag @exhibit.user.avatar.url %></div>
+          </figure>
+          <div class="exhibit-user-name">
+            <% if @exhibit.user.name.present? %>
+              <%= @exhibit.user.name %>
+            <% else %>
+              NO NAME
+            <% end %>
+          </div>
+        </div>
+        <section class="left-side-menu exhibit-user-sec">
+          <div class="row">
+            <div class="exhibit-user-selfintroduction">
+              <%= simple_format(h(@exhibit.user.self_introduction)) %>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+      <% if current_user.present? %>
+      <% if @exhibit.user_id == current_user.id %>
+      <div class="exhibit-edit-sec">
+        <%= link_to edit_exhibit_path(@exhibit),:class =>"btn btn-default purchase-btn center-block" do %>
+        出品を編集する
+        <% end %>
+      </div>
+      <% else %>
+      <div class="exhibit-purchase-sec">
+        <%= button_tag :type => "submit", :class =>"btn btn-default purchase-btn center-block" do %>
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>購入手続きへ
+        <% end %>
+      </div>
+      <% end %>
+      <% else %>
+      <div class="exhibit-purchase-sec">
+        <%= button_tag :type => "submit", :class =>"btn btn-default purchase-btn center-block" do %>
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>購入手続きへ
+        <% end %>
+      </div>
+      <% end %>
+
+
+    </div>
+
+    <!-- 右側 -->
+    <div class="col-md-8">
+      <div class="row">
+        <section class="exihit-show-main-sec">
+          <div class="exhibit-show-child exhibit-show-title">
+            <h1><%= @exhibit.title %></h1>
+          </div>
+          <div class="exhibit-show-image">
+            <%= image_tag @exhibit.image.url %>
+          </div>
+          <div class="exhibit-show-description">
+            <div class="exhibit-show-description_title">
+              商品説明
+            </div>
+            <%= simple_format(h(@exhibit.exhibit_description)) %>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
