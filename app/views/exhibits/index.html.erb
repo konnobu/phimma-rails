@@ -11,6 +11,15 @@
     <!-- 左側 -->
     <div class="col-md-3">
 
+      <section class="left-side-menu search-sec">
+        <%= search_form_for @q do |f| %>
+        <div class="form-group">
+          <%= f.search_field :title_or_exhibit_description_cont, placeholder: "タイトルか説明文を検索", class: "form-control search-btn" %>
+          <%= f.submit "検索", style: "display: none" %>
+        </div>
+        <% end %>
+      </section>
+
       <section class="left-side-menu search-result-count-sec">
         <div class="row search-result-count">
           対象出品数<br>
@@ -21,7 +30,7 @@
       <div class="left-side-menu-sec">
         <section class="left-side-menu sort-type-sec">
           <div class="row">
-            <div>並び替え</div>
+            <div>並び替え（未実装）</div>
             <div class="btn-group" style="">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 並び替えの種類
@@ -37,9 +46,10 @@
           </div>
         </section>
 
+
         <section class="left-side-menu category-type-sec">
           <div class="row">
-            <div>カテゴリーを選択する</div>
+            <div>カテゴリーを選択する（未実装）</div>
             <div class="btn-group">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 選択
@@ -57,7 +67,7 @@
 
         <section class="left-side-menu price-type-sec">
           <div class="row">
-            <div>価格帯を選択する</div>
+            <div>価格帯を選択する（未実装）</div>
             <div class="btn-group">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 ￥0-￥500<span class="caret"></span>
@@ -74,7 +84,7 @@
 
         <section class="left-side-menu exhibit-status-sec">
           <div class="row">
-            <div>商品の状態</div>
+            <div>商品の状態（未実装）</div>
             <div class="btn-group">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 傷や汚れあり<span class="caret"></span>
@@ -91,7 +101,7 @@
 
         <section class="left-side-menu category-type-sec">
           <div class="row">
-            <div>出品者の評価</div>
+            <div>出品者の評価（未実装）</div>
             <div class="btn-group">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 レーティングを選択<span class="caret"></span>
@@ -118,9 +128,9 @@
         <div class="exhibit-card col-md-4">
           <div class="exhibit-card-top">
             <% if exhibit.image? %>
-              <%= image_tag exhibit.image.url %>
+            <%= image_tag exhibit.image.url %>
             <% else %>
-              <img src="http://design-ec.com/d/e_others_50/l_e_others_500.png" >
+            <img src="http://design-ec.com/d/e_others_50/l_e_others_500.png" >
             <% end %>
           </div>
           <div class="exhibit-card-bottom">

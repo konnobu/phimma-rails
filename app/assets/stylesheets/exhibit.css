@@ -282,3 +282,12 @@
 .link-to-login {
   margin-left: 21px;
 }
+
+.search-btn {
+  -webkit-border-radius: 0;
+          border-radius: 0;
+}
+
+.search-sec {
+  padding: 0;
+}

@@ -6,7 +6,10 @@ class ExhibitsController < ApplicationController
 
   # 商品一覧アクション
   def index
-    @exhibits = Exhibit.all.order(created_at: :desc)
+    @q = Exhibit.order(created_at: :desc).ransack(params[:q])
+    @exhibits = @q.result(distinct: true)
+    # 最新出品を5つ取得
+    @new_exhibits = Exhibit.order(created_at: :desc).limit(10)
   end
 
   # 商品新規登録newアクション
