@@ -43,7 +43,7 @@ class ExhibitsController < ApplicationController
   # 商品削除destroyアクション
   def destroy
     @exhibit.destroy
-    redirect_to exhibits_url
+    redirect_to exhibits_url, notice: '出品を削除しました'
   end
 
   private
