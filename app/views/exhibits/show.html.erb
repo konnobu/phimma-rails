@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="row breadcrumb-row">
     <ul class="breadcrumb">
       <li><a href="#">TOP<br></a></li>
@@ -49,19 +48,21 @@
         </section>
         <div class="exhibit-user-thumbnail-sec">
           <figure class="exhibit-user-thumbnail-sec-img">
-            <div class="image"><img src="https://www.pakutaso.com/shared/img/page/mae_m05.jpg" alt="sample47"/></div>
+
+            <div class="image"><%= image_tag @exhibit.user.avatar.url %></div>
           </figure>
           <div class="exhibit-user-name">
-            <%= @exhibit.user.name %>
+            <% if @exhibit.user.name.present? %>
+              <%= @exhibit.user.name %>
+            <% else %>
+              NO NAME
+            <% end %>
           </div>
         </div>
         <section class="left-side-menu exhibit-user-sec">
           <div class="row">
             <div class="exhibit-user-selfintroduction">
-              はじめまして！岩手県立大学社会福祉学部３年のあーやです！<br>
-              基本的には、社会福祉系の教科書の出品になると思います♪ 値下げ交渉にも多少は応じられます。
-              ただ、出品直後のものは原則値下げしません（相談次第で可能になる事もあります）。<br>
-              よろしくお願いいたします。
+              <%= simple_format(h(@exhibit.user.self_introduction)) %>
             </div>
           </div>
         </section>

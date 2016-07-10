@@ -1,5 +1,13 @@
 RailsAdmin.config do |config|
-
+  module Config
+    module Fields
+      module Types
+        class Datetime #< RailsAdmin::Config::Fields::Base
+          @format = :custom
+        end
+      end
+    end
+  end
   ### Popular gems integration
 
   # == Devise ==

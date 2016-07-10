@@ -100,7 +100,7 @@
 }
 
 .exhibit-single-container-main-child {
-  padding: 2% 3%;
+  padding: 2% 3% 0 3%;
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
@@ -275,7 +275,8 @@
 
 .sign-up-btn {
   width: 94%;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 .link-to-login {
