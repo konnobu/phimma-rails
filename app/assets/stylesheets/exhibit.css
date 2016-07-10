@@ -265,3 +265,19 @@
   font-size: 1.4em;
   padding-bottom: 15px;
 }
+
+/* sign up */
+
+.user-new-container {
+  margin-top: 80px;
+  width: 700px;
+}
+
+.sign-up-btn {
+  width: 94%;
+  margin-bottom: 20px;
+}
+
+.link-to-login {
+  margin-left: 21px;
+}
