@@ -133,6 +133,7 @@
 
 .exhibit-submit {
   width: 100%;
+  padding: 20px 0 50px 0;
 }
 
 .submit-btn {
@@ -142,5 +143,125 @@
   width: 80%;
   padding: 13px 0;
   -webkit-border-radius: 0;
-          border-radius: 0;
+  border-radius: 0;
+}
+
+.exhibit-border-none {
+  border: none;
+}
+
+/* show */
+
+.exhibit-detail-sec {
+  padding-bottom: 0;
+}
+
+.exhibit-h2 {
+  font-size: 1.4em;
+  padding-bottom: 10px;
+}
+
+.exhibit-purchase-sec,
+.exhibit-edit-sec {
+  margin-top: 15px;
+}
+
+.left-side-menu-exhibit-user-sec {
+  margin-top: 20px;
+}
+
+
+.purchase-btn {
+  background-color: #0E7AC4;
+  color: #FFFFFF;
+  font-size: 1.2em;
+  width: 100%;
+  padding: 13px 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+.exhibit-purchase-sec .fa {
+  margin-right: 10px;
+}
+
+.exihit-show-main-sec {
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+.exhibit-user-thumbnail-sec {
+  width: 100%;
+  height: 200px;
+  background-repeat: repeat;
+  background-image: url(/images/congruent_pentagon.png);
+}
+
+.exhibit-user-thumbnail-sec-img {
+  color: #fff;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  min-width: 100px;
+  max-width: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+.exhibit-user-thumbnail-sec-img > .image {
+  display: block;
+  position: relative;
+  padding: 30px 0 20px 0;
+}
+
+.exhibit-user-thumbnail-sec-img > .image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.exhibit-user-thumbnail-sec-img > .image:before {
+  position: absolute;
+  bottom: 0;
+  content: '';
+  background: #ffffff;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.exhibit-user-name {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.exhibit-user-selfintroduction {
+  padding: 10px 5px;
+  font-size: 1em;
+}
+
+.exhibit-show-child {
+  padding: 20px 20px;
+}
+
+.exhibit-show-title h1 {
+  margin: 0;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.exhibit-show-image img {
+  width: 100%;
+}
+
+.exhibit-show-description {
+  padding: 20px;
+  font-size: 1.1em;
+}
+
+.exhibit-show-description_title {
+  font-size: 1.4em;
+  padding-bottom: 15px;
 }

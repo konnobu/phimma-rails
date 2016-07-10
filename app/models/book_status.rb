@@ -1,3 +1,3 @@
 class BookStatus < ActiveRecord::Base
-  has_many :exhibits
+  belongs_to :exhibit
 end

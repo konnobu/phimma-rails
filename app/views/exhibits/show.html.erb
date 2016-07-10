@@ -1,86 +1,118 @@
-<!--======== Main =========-->
-    <div id = "main" class="container">
-      <div class="well">
-        <ul class="breadcrumb">
-          <li><a href="index.php">Phimma<br></a></li>
-          <li><a href="home.php">ホーム</a></li>
-          <li><a href="search_result.php">ソフトウェア情報</a></li>
-          <li class="active">商品情報</li>
-        </ul>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="panel panel-primary ">
-              <div class="panel-heading">
-                <h3 class="panel-title">出品者情報</h3>
-              </div>
-              <div class="panel-body">
-                <img src="images/user_img/aya.jpg" class="img-responsive center-block">
-                  <div>
-                    <span style="line-height: 1.4;">
-                      <br>
-                      はじめまして！岩手県立大学社会福祉学部３年のあーやです！<br>
-                      基本的には、社会福祉系の教科書の出品になると思います♪ 値下げ交渉にも多少は応じられます。
-                      ただ、出品直後のものは原則値下げしません（相談次第で可能になる事もあります）。<br>
-                      よろしくお願いいたします。
-                    </span>
-                  </div>
-              </div>
-            </div>
-            <div class="panel panel-primary">
-              <div class="panel-heading">
-                <h3 class="panel-title">商品情報</h3>
-              </div>
-              <div class="panel-body">
-                <div class="table-responsive">
-                  <table class="table table-striped">
-                    <tr>
-                      <td>商品価格：</td>
-                      <td>￥1200</td>
-                    </tr>
-                    <tr>
-                      <td>商品状態：</td>
-                      <td>新品</td>
-                    </tr>
-                    <tr>
-                      <td>カテゴリ：</td>
-                      <td>ソフトウェア情報</td>
-                    </tr>
-                    <tr>
-                      <td>受渡し：</td>
-                      <td>１週間以内</td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <a href="trade_info.php" class="btn btn-default primary-pink btn-lg btn-block" style = "margin-bottom:15px" >
-              <span class="glyphicon glyphicon-ok"></span>
-              購入する
-            </a>
-          </div>
+<div class="container">
 
-          <div class="col-md-8">
-            <div class="panel panel-primary ">
-              <div class="panel-heading">
-                <h3>線形代数の基礎</h3>
-              </div>
-              <div class="panel-body">
-                <span style="line-height: 1.42857;">
-                買ってはみたものの結局一度も使わなかった大学の数学の参考書です・・・。<br>
-                新品未使用ですが、多少値段を下げてます。<br>
-                <br>
-                線形代数の基礎 (1994/11)<br>
-                著者 川原雄作、木村哲三、藪康彦、亀田真澄<br>
-                発行者 南條光章<br>
-                発行所 共立出版株式会社<br>
-                定価 1900円＋税<br>
-                </span>
+  <div class="row breadcrumb-row">
+    <ul class="breadcrumb">
+      <li><a href="#">TOP<br></a></li>
+      <li><a href="#">出品詳細</a></li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <!-- 左側 -->
+    <div class="col-md-4">
+
+      <div class="left-side-menu-sec">
+        <section class="left-side-menu exhibit-detail-sec">
+          <div class="row">
+            <div class="exhibit-h2">
+              出品詳細情報
+            </div>
+            <div class="exhibit-detail">
+              <div class="table-responsive">
+                <table class="table">
+                  <tr>
+                    <td>商品価格：</td>
+                    <td><%= @exhibit.price %>円</td>
+                  </tr>
+                  <tr>
+                    <td>商品状態：</td>
+                    <td><%= @exhibit.book_status.status_title %></td>
+                  </tr>
+                  <tr>
+                    <td>カテゴリ：</td>
+                    <td><%= @exhibit.exhibit_category.category_name %></td>
+                  </tr>
+                </table>
               </div>
             </div>
-            <div class="well">
-              <img src="images/book_img/text_10.jpg" class="img-responsive img-thumbnail center-block" id="img_product">
+          </div>
+        </section>
+      </div>
+
+      <div class="left-side-menu-sec left-side-menu-exhibit-user-sec">
+        <section class="left-side-menu exhibit-user-sec">
+          <div class="row">
+            <div class="exhibit-h2">
+              出品者情報
             </div>
+          </div>
+        </section>
+        <div class="exhibit-user-thumbnail-sec">
+          <figure class="exhibit-user-thumbnail-sec-img">
+            <div class="image"><img src="https://www.pakutaso.com/shared/img/page/mae_m05.jpg" alt="sample47"/></div>
+          </figure>
+          <div class="exhibit-user-name">
+            <%= @exhibit.user.name %>
           </div>
         </div>
+        <section class="left-side-menu exhibit-user-sec">
+          <div class="row">
+            <div class="exhibit-user-selfintroduction">
+              はじめまして！岩手県立大学社会福祉学部３年のあーやです！<br>
+              基本的には、社会福祉系の教科書の出品になると思います♪ 値下げ交渉にも多少は応じられます。
+              ただ、出品直後のものは原則値下げしません（相談次第で可能になる事もあります）。<br>
+              よろしくお願いいたします。
+            </div>
+          </div>
+        </section>
       </div>
-    </div><!--======== end Main =========-->
+
+
+      <% if current_user.present? %>
+      <% if @exhibit.user_id == current_user.id %>
+      <div class="exhibit-edit-sec">
+        <%= link_to edit_exhibit_path(@exhibit),:class =>"btn btn-default purchase-btn center-block" do %>
+        出品を編集する
+        <% end %>
+      </div>
+      <% else %>
+      <div class="exhibit-purchase-sec">
+        <%= button_tag :type => "submit", :class =>"btn btn-default purchase-btn center-block" do %>
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>購入手続きへ
+        <% end %>
+      </div>
+      <% end %>
+      <% else %>
+      <div class="exhibit-purchase-sec">
+        <%= button_tag :type => "submit", :class =>"btn btn-default purchase-btn center-block" do %>
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>購入手続きへ
+        <% end %>
+      </div>
+      <% end %>
+
+
+    </div>
+
+    <!-- 右側 -->
+    <div class="col-md-8">
+      <div class="row">
+        <section class="exihit-show-main-sec">
+          <div class="exhibit-show-child exhibit-show-title">
+            <h1><%= @exhibit.title %></h1>
+          </div>
+          <div class="exhibit-show-image">
+            <%= image_tag @exhibit.image.url %>
+          </div>
+          <div class="exhibit-show-description">
+            <div class="exhibit-show-description_title">
+              商品説明
+            </div>
+            <%= simple_format(h(@exhibit.exhibit_description)) %>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
